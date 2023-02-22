@@ -98,6 +98,10 @@ app_license = "MIT"
 doc_events = {
 	"Attendance": {
 		"validate": "erpnext_custom.erpnext_custom.event.attendence.clac_hours",
+	},
+	"Sales Invoice": {
+		"validate": "erpnext_custom.erpnext_custom.event.Sales_Invoice_event.validate_add_custom_remarks",
+		"validate": "erpnext_custom.erpnext_custom.event.Sales_Invoice_event.validate_payments_sales_invoice"		
 	}
 }
 

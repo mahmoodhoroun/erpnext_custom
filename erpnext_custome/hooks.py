@@ -1,27 +1,27 @@
 from . import __version__ as app_version
 
-app_name = "erpnext_custom"
-app_title = "Erpnext Custom"
-app_publisher = "mahmood"
-app_description = "Erpnext Custom"
+app_name = "erpnext_custome"
+app_title = "Erpnext Custome"
+app_publisher = "husam hammad"
+app_description = "Erpnext Custome App"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "mahmood@gmail.com"
+app_email = "huasmhammad542@gmail.com"
 app_license = "MIT"
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/erpnext_custom/css/erpnext_custom.css"
-# app_include_js = "/assets/erpnext_custom/js/erpnext_custom.js"
+# app_include_css = "/assets/erpnext_custome/css/erpnext_custome.css"
+# app_include_js = "/assets/erpnext_custome/js/erpnext_custome.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/erpnext_custom/css/erpnext_custom.css"
-# web_include_js = "/assets/erpnext_custom/js/erpnext_custom.js"
+# web_include_css = "/assets/erpnext_custome/css/erpnext_custome.css"
+# web_include_js = "/assets/erpnext_custome/js/erpnext_custome.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "erpnext_custom/public/scss/website"
+# website_theme_scss = "erpnext_custome/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -31,7 +31,11 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+
+doctype_js = {"Purchase Order" : "public/js/purchase-order.js",
+              "Quotation": "public/js/quotation.js",
+              "Sales Invoice" : "public/js/sales_invoice.js"
+              }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -56,20 +60,20 @@ app_license = "MIT"
 # Installation
 # ------------
 
-# before_install = "erpnext_custom.install.before_install"
-# after_install = "erpnext_custom.install.after_install"
+# before_install = "erpnext_custome.install.before_install"
+# after_install = "erpnext_custome.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "erpnext_custom.uninstall.before_uninstall"
-# after_uninstall = "erpnext_custom.uninstall.after_uninstall"
+# before_uninstall = "erpnext_custome.uninstall.before_uninstall"
+# after_uninstall = "erpnext_custome.uninstall.after_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "erpnext_custom.notifications.get_notification_config"
+# notification_config = "erpnext_custome.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -87,22 +91,26 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Purchase Order": "erpnext_custome.erpnext_custome.overrides.purchase_order.PurchaseOrder"
+}
 
 # Document Events
-# ---------------
+# --------------
 # Hook on document methods and events
 
 doc_events = {
-	"Attendance": {
-		"validate": "erpnext_custom.erpnext_custom.event.attendence.clac_hours",
+	"Employee": {
+		# "validate": "erpnext_custome.erpnext_custome.doc_event.employee_event.validate_reason_for_leaving",
+		"validate": "erpnext_custome.erpnext_custome.doc_event.employee_event.create_task",	},
+    "Attendance": {
+        "validate": "erpnext_custome.erpnext_custome.doc_event.attendance_event.clac_hours",
 	},
-	"Sales Invoice": {
-		"validate": "erpnext_custom.erpnext_custom.event.Sales_Invoice_event.validate_add_custom_remarks",
-		"validate": "erpnext_custom.erpnext_custom.event.Sales_Invoice_event.validate_payments_sales_invoice"		
-	}
+    "Sales Invoice": {
+		"validate":"erpnext_custome.erpnext_custome.doc_event.sales_invoice_event.validate_add_note_toremarksss",
+        "validate":"erpnext_custome.erpnext_custome.doc_event.sales_invoice_event.validate_payment_is_pos",
+        } 
+    
 }
 
 # Scheduled Tasks
@@ -110,39 +118,39 @@ doc_events = {
 
 # scheduler_events = {
 #	"all": [
-#		"erpnext_custom.tasks.all"
+#		"erpnext_custome.tasks.all"
 #	],
 #	"daily": [
-#		"erpnext_custom.tasks.daily"
+#		"erpnext_custome.tasks.daily"
 #	],
 #	"hourly": [
-#		"erpnext_custom.tasks.hourly"
+#		"erpnext_custome.tasks.hourly"
 #	],
 #	"weekly": [
-#		"erpnext_custom.tasks.weekly"
+#		"erpnext_custome.tasks.weekly"
 #	]
 #	"monthly": [
-#		"erpnext_custom.tasks.monthly"
+#		"erpnext_custome.tasks.monthly"
 #	]
 # }
 
 # Testing
 # -------
 
-# before_tests = "erpnext_custom.install.before_tests"
+# before_tests = "erpnext_custome.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "erpnext_custom.event.get_events"
+#	"frappe.desk.doctype.event.event.get_events": "erpnext_custome.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-#	"Task": "erpnext_custom.task.get_dashboard_data"
+#	"Task": "erpnext_custome.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -178,6 +186,6 @@ user_data_fields = [
 # --------------------------------
 
 # auth_hooks = [
-#	"erpnext_custom.auth.validate"
+#	"erpnext_custome.auth.validate"
 # ]
 

@@ -1,8 +1,7 @@
-## Erpnext Custom
+## Erpnext Custome
 
-Erpnext Custom
+Erpnext Custome App
 
 #### License
 
-MIT# erpnext_custom
-# erpnext_custom
+MIT

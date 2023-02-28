@@ -32,7 +32,10 @@ app_license = "MIT"
 
 # include js in doctype views
 
-doctype_js ={"Sales Invoice" : "public/js/sales_invoice.js"}
+doctype_js ={
+    "Sales Invoice" : "public/js/sales_invoice.js",
+    "Warehouse" : "public/js/warehouse.js"
+    }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -112,7 +115,10 @@ doc_events = {
     "Sales Invoice": {
 		"validate":"erpnext_custom.erpnext_custom.event.sales_invoice_event.validate_add_note_toremarksss",
         "validate":"erpnext_custom.erpnext_custom.event.sales_invoice_event.validate_payment_is_pos",
-        } 
+    },
+    "Purchase Invoice": {
+		"on_submit": "erpnext_custom.erpnext_custom.event.purchase_invoice_event.create_purchase_receipt"
+	},
 }
 
 

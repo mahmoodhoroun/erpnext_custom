@@ -16,5 +16,13 @@ erpnext_custom/config/__init__.py
 erpnext_custom/config/desktop.py
 erpnext_custom/config/docs.py
 erpnext_custom/erpnext_custom/__init__.py
+erpnext_custom/erpnext_custom/custom/attendance.json
+erpnext_custom/erpnext_custom/custom/customer.json
+erpnext_custom/erpnext_custom/custom/packed_item.json
+erpnext_custom/erpnext_custom/custom/sales_invoice.json
+erpnext_custom/erpnext_custom/custom/sales_invoice_item.json
+erpnext_custom/erpnext_custom/event/attendance_event.py
+erpnext_custom/erpnext_custom/event/sales_invoice_event.py
+erpnext_custom/public/js/sales_invoice.js
 erpnext_custom/templates/__init__.py
 erpnext_custom/templates/pages/__init__.py

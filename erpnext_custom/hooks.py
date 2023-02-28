@@ -34,7 +34,8 @@ app_license = "MIT"
 
 doctype_js ={
     "Sales Invoice" : "public/js/sales_invoice.js",
-    "Warehouse" : "public/js/warehouse.js"
+    "Warehouse" : "public/js/warehouse.js",
+    "Item": "public/js/item.js"
     }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -119,6 +120,9 @@ doc_events = {
     "Purchase Invoice": {
 		"on_submit": "erpnext_custom.erpnext_custom.event.purchase_invoice_event.create_purchase_receipt"
 	},
+    "Material Request":{
+   	 	"on_submit": "erpnext_custom.erpnext_custom.event.material_request_event.create_stock_entry"
+	}
 }
 
 

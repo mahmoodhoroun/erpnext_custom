@@ -1,7 +1,6 @@
 import frappe
-
+@frappe.whitelist()
 def create_purchase_receipt(doc, event):
-    frappe.msgprint("mahmood")
     purchase_receipt_doc = frappe.new_doc("Purchase Receipt")
     purchase_receipt_doc.supplier = doc.supplier
     for purchase_invoice_item in doc.items:

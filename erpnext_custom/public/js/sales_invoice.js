@@ -750,6 +750,7 @@ frappe.ui.form.on('Sales Invoice', {
                         console.log("He not In function")
 						frm.set_df_property('apply_discount_on', 'read_only', 0);
 						frm.set_df_property('additional_discount_percentage', 'read_only', 0);
+						frm.set_df_property('discount_amount', 'read_only', 0);
 					}
 				}
 			});
